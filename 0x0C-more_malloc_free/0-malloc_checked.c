@@ -11,10 +11,15 @@ void *malloc_checked(unsigned int b)
 {
 	void *ptr;
 
-	ptr = malloc(b);
 
-	if (ptr == NULL)
-		exit(98);
+    ptr = malloc(b);
 
-	return (ptr);
+    printf("Allocation size: %u\n", b);
+
+    if (ptr == NULL) {
+        printf("Memory allocation failed.\n");
+        exit(98);
+    }
+
+    return ptr;
 }
