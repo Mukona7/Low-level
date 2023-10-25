@@ -1,17 +1,20 @@
+#include <stdlib.h>
 #include "main.h"
-#include <stdlib.h>  // Include the standard library header for malloc, NULL, and exit
 
 /**
- * malloc_checked - allocates memory using malloc
- * @b: the number of bytes to allocate
+ * *malloc_checked - allocates memory using malloc
+ * @b: number of bytes to allocate
+ *
  * Return: a pointer to the allocated memory
  */
 void *malloc_checked(unsigned int b)
 {
-    void *i;
+	void *ptr;
 
-    i = malloc(b);
-    if (i == NULL)
-        exit(98);
-    return (i);
+	ptr = malloc(b);
+
+	if (ptr == NULL)
+		exit(98);
+
+	return (ptr);
 }
